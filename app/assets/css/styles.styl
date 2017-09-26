@@ -1,0 +1,70 @@
+@import "mixins"
+@import "core"
+
+html, body
+    min-height 100%
+    overflow hidden
+body
+    /*background url("../images/_background_img2.jpg") no-repeat*/
+    background #0077BB
+    overflow hidden
+    background-size cover
+    background-position center
+    font-size 16px
+    font-family "OpenSans"
+    line-height 20px
+    color #111
+    @media screen and (max-width 768px)
+        font-size 14px
+    @media screen and (min-width 1025px)
+        font-size 18px
+.im-app
+    height 100vh
+    padding 0
+    overflow hidden
+    .main
+        height 100%
+        .row
+            margin 0
+        .container
+            width calc(100% - 100px)
+            min-width 740px
+            max-width 2000px
+
+bs-tooltip-container
+    &.tooltip.tooltip-right
+        -webkit-animation-duration 0.35s
+        animation-duration 0.35s
+        -webkit-animation-fill-mode both
+        animation-fill-mode both
+        -webkit-animation-name customSlideRight
+        animation-name customSlideRight
+        -webkit-transform-origin 0 0
+        transform-origin 0 0
+        .tooltip-inner
+            text-align left
+            position relative
+            /*max-width 500px*/
+            &:before
+                content ""
+                position absolute
+                width 0
+                height 0
+                border-color transparent
+                border-style solid
+                border-width 5px 5px 5px 0
+                border-right-color #000
+                top 50%
+                left -5px
+                margin-top -5px
+        
+@keyframes customSlideRight {
+    0%   {
+        -webkit-transform scaleX(0)
+        transform scaleX(0)
+    }
+    100% {
+        -webkit-transform scaleX(1)
+        transform scaleX(1)
+    }
+}
